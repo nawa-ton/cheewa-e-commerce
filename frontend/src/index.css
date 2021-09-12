@@ -47,8 +47,20 @@ footer {
   align-items: center;
 }
 
+.row.top {
+  align-items: flex-start;
+}
+
 .row.center {
   justify-content: center;
+}
+
+.col-1{
+  flex: 1 1 25rem;
+}
+
+.col-2{
+  flex: 2 1 50rem;
 }
 
 /* Common */
@@ -59,6 +71,45 @@ img {
 img.medium {
   max-width: 29rem;
   width:100%;
+}
+
+img.large {
+  /*max-width: 80rem;*/
+  width:100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+li {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #a4a4a4;
+  font-size: 1.6rem;
+  font-family: Arial, sans-serif; /* TODO: update font*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: black;
+}
+
+button.primary {
+  background-color: #f0c040;
+}
+
+button.block {
+  width: 100%;
 }
 
 /* Typography */
@@ -114,4 +165,9 @@ footer {
 .rating span{
   color: #f0c040;
   margin: 0.1rem;
+}
+
+.rating span:last-child {
+  color: #000000;
+  margin-left: 1rem;
 }

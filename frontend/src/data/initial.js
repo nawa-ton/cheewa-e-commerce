@@ -7,8 +7,9 @@ const data = {
             image: '/images/p1.jpg',
             weight: '250g',
             price: 12,
+            countInStock: 20,
             rating: 4.5,
-            numReview: 10,
+            numReviews: 10,
             description: 'Tangy and Sweet organic apple jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
@@ -18,8 +19,9 @@ const data = {
             image: '/images/p2.jpg',
             weight: '250g',
             price: 16,
+            countInStock: 15,
             rating: 4.6,
-            numReview: 12,
+            numReviews: 12,
             description: 'Tangy organic red current jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
@@ -29,8 +31,9 @@ const data = {
             image: '/images/p3.jpg',
             weight: '360g (120g X 3)',
             price: 20,
-            rating: 5,
-            numReview: 20,
+            countInStock: 18,
+            rating: 0,
+            numReviews: 0,
             description: 'Tangy and Sweet organic raspberry and strawberry jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
@@ -40,8 +43,9 @@ const data = {
             image: '/images/p4.jpg',
             weight: '250g (50g X 5)',
             price: 13,
+            countInStock: 5,
             rating: 5,
-            numReview: 20,
+            numReviews: 20,
             description: 'Sweet organic prune jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
@@ -51,8 +55,9 @@ const data = {
             image: '/images/p5.jpg',
             weight: '300g (150g X 2)',
             price: 16,
+            countInStock: 10,
             rating: 4.6,
-            numReview: 10,
+            numReviews: 10,
             description: 'Tangy organic raspberry jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
@@ -62,8 +67,9 @@ const data = {
             image: '/images/p6.jpg',
             weight: '300g',
             price: 13,
+            countInStock: 0,
             rating: 4.5,
-            numReview: 13,
+            numReviews: 13,
             description: 'Organic strawberry jam from local farm. Perfect for toast, yogurt, pancake'
         }
     ]
