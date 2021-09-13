@@ -63,9 +63,18 @@ footer {
   flex: 2 1 50rem;
 }
 
+.min-30 {
+  min-width: 30rem;
+}
+
 /* Common */
 img {
   border-radius: 0.5rem;
+}
+
+img.small {
+  max-width: 5rem;
+  width:100%;
 }
 
 img.medium {
@@ -88,20 +97,27 @@ li {
   margin-top: 1rem;
 }
 
-button {
-  padding: 1rem;
+input, select, textarea, button {
   border-radius: 0.5rem;
   border: 0.1rem solid #a4a4a4;
   font-size: 1.6rem;
   font-family: Arial, sans-serif; /* TODO: update font*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f8f8;
-  cursor: pointer;
 }
 
-button:hover {
+input:hover, select:hover, textarea:hover, button:hover {
   border-color: black;
+}
+
+input, select, textarea {
+  padding: 0.5rem;
+}
+
+button {
+  padding: 1rem;
+  background-color: #f8f8f8;
+  cursor: pointer;
 }
 
 button.primary {
@@ -135,6 +151,15 @@ a:hover {
 header a {
   color: #ecddd0;
   padding: 0.5rem;
+}
+
+.badge {
+  background-color: #971f1f;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-size: 1.4rem;
+  margin-left: 0.4rem;
 }
 
 /* footer */
