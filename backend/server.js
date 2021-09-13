@@ -1,7 +1,15 @@
 import express from 'express';
-import data from "./data/initial.js"; //must have .js
+import mongoose from 'mongoose';
+import data from "./data/initial.js";
+import userRouter from "./router/userRouter.js"; //must have .js
 
 const app = express();
+
+const uri = process.env.MONGODB_URL || 'mongodb://localhost/cheewa';
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
 app.get('/api/products', (req, res) => {
     res.send(data.products);
@@ -16,9 +24,18 @@ app.get('/api/products/:id', (req, res) => {
     }
 });
 
+
+
 app.get('/', (req, res) => {
     res.send('Server is ready');
 });
+
+app.use('/api/users', userRouter);
+
+//This will redirect all errors from what are wrapped inside expressAsyncHandler to frontend
+app.use((error, req, res, next) => {
+    res.status(500).send({message: error.message});
+})
 
 const port = process.env.PORT || 5000;
 

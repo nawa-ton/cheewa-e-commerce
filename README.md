@@ -1,1 +1,2 @@
-# cheewa-web-app
+# Cheewa
+E-commerce website built with MERN tech stack
