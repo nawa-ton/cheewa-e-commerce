@@ -17,7 +17,6 @@ const data = {
     ],
     products:[
         {
-            _id: '1',
             name: 'Apple Jam',
             category: 'Condiment',
             image: '/images/p1.jpg',
@@ -29,7 +28,6 @@ const data = {
             description: 'Tangy and Sweet organic apple jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
-            _id: '2',
             name: 'Red Current Jam',
             category: 'Condiment',
             image: '/images/p2.jpg',
@@ -41,7 +39,6 @@ const data = {
             description: 'Tangy organic red current jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
-            _id: '3',
             name: 'Raspberry & Strawberry Jam',
             category: 'Condiment',
             image: '/images/p3.jpg',
@@ -53,7 +50,6 @@ const data = {
             description: 'Tangy and Sweet organic raspberry and strawberry jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
-            _id: '4',
             name: 'Prune Jam',
             category: 'Condiment',
             image: '/images/p4.jpg',
@@ -65,7 +61,6 @@ const data = {
             description: 'Sweet organic prune jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
-            _id: '5',
             name: 'Raspberry Jam',
             category: 'Condiment',
             image: '/images/p5.jpg',
@@ -77,7 +72,6 @@ const data = {
             description: 'Tangy organic raspberry jam from local farm. Perfect for toast, yogurt, pancake'
         },
         {
-            _id: '6',
             name: 'Strawberry Jam',
             category: 'Condiment',
             image: '/images/p6.jpg',
