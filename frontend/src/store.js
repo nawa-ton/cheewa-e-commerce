@@ -2,8 +2,8 @@ import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunk from "redux-thunk";
 import {productDetailsReducer, productListReducer} from "./reducers/productReducers";
 import {cartReducers} from "./reducers/cartReducers";
-import {userRegisterReducer, userSigninReducer} from "./reducers/userReducers";
-import {orderCreateReducer, orderDetailsReducer} from "./reducers/orderReducers";
+import {userDetailsReducer, userRegisterReducer, userSigninReducer} from "./reducers/userReducers";
+import {orderCreateReducer, orderDetailsReducer, orderListReducer, orderPayReducer} from "./reducers/orderReducers";
 
 const initialState = {
     userSignin: {
@@ -21,8 +21,11 @@ const reducer = combineReducers({
     cart: cartReducers,
     userSignin: userSigninReducer,
     userRegister: userRegisterReducer,
+    userDetails: userDetailsReducer,
     orderCreate: orderCreateReducer,
-    orderDetails: orderDetailsReducer
+    orderDetails: orderDetailsReducer,
+    orderPay: orderPayReducer,
+    orderList: orderListReducer,
 });
 
 //For displaying redux in browser dev console

@@ -18,6 +18,12 @@ const orderSchema = new mongoose.Schema({
         phoneNumber: {type: String, default:''},
     },
     paymentMethod: {type: String, required: true},
+    paymentResult: {
+        id: String,
+        status: String,
+        update_time: String,
+        email_address: String
+    },
     itemsPrice: {type: Number, required: true},
     shippingPrice: {type: Number, required: true},
     tax: {type: Number, required: true},
@@ -25,8 +31,8 @@ const orderSchema = new mongoose.Schema({
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
     isPaid: {type: Boolean, default: false},
     paidOn: {type: Date},
-    isDelivered: {type: Boolean, default: false},
-    deliveredOn: {type: Date}
+    isShipped: {type: Boolean, default: false},
+    shippedOn: {type: Date}
 }, {
     timestamps: true
 });

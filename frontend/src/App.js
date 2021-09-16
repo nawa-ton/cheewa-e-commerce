@@ -11,6 +11,8 @@ import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderDetailsScreen from "./screens/OrderDetailsScreen";
+import OrderHistoryScreen from "./screens/OrderHistoryScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -42,7 +44,9 @@ function App() {
                   <div className="dropdown">
                     <Link to="#">{userInfo.name}<i className="fa fa-caret-down"/> </Link>
                     <ul className="dropdown-content">
-                      <Link to="#signout" onClick={signouthandler}>Sign Out</Link>
+                      <li><Link to="/profile">User Profile</Link></li>
+                      <li><Link to="/orderhistory">Order History</Link></li>
+                      <li><Link to="#signout" onClick={signouthandler}>Sign Out</Link></li>
                     </ul>
                   </div>:
                   <Link to="/signin">Sign in</Link>
@@ -57,10 +61,12 @@ function App() {
             <Route path="/cart/:id?" component={CartScreen}/> {/* Adding ? to make id optional */}
             <Route path="/signin" component={SigninScreen}/>
             <Route path="/register" component={RegisterScreen}/>
+            <Route path="/profile" component={ProfileScreen}/>
             <Route path="/shipping" component={ShippingScreen}/>
             <Route path="/payment" component={PaymentScreen}/>
             <Route path="/placeorder" component={PlaceOrderScreen}/>
             <Route path="/order/:id" component={OrderDetailsScreen}/>
+            <Route path="/orderhistory" component={OrderHistoryScreen}/>
           </main>
 
           <footer className="row center">
