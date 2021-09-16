@@ -7,6 +7,10 @@ import {useDispatch, useSelector} from "react-redux";
 import SigninScreen from "./screens/SigninScreen";
 import {signout} from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
+import ShippingScreen from "./screens/ShippingScreen";
+import PaymentScreen from "./screens/PaymentScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderDetailsScreen from "./screens/OrderDetailsScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -53,6 +57,10 @@ function App() {
             <Route path="/cart/:id?" component={CartScreen}/> {/* Adding ? to make id optional */}
             <Route path="/signin" component={SigninScreen}/>
             <Route path="/register" component={RegisterScreen}/>
+            <Route path="/shipping" component={ShippingScreen}/>
+            <Route path="/payment" component={PaymentScreen}/>
+            <Route path="/placeorder" component={PlaceOrderScreen}/>
+            <Route path="/order/:id" component={OrderDetailsScreen}/>
           </main>
 
           <footer className="row center">

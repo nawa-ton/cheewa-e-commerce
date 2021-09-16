@@ -38,11 +38,11 @@ const SigninScreen = (props) => {
                 {error && <MessageBox variant="danger">{error}</MessageBox>}
                 <div>
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter email" required onChange={e => setEmail(e.target.value)}/>
+                    <input type="email" id="email" required onChange={e => setEmail(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required onChange={e => setPassword(e.target.value)}/>
+                    <input type="password" id="password" required onChange={e => setPassword(e.target.value)}/>
                 </div>
                 <div>
                     <label/>

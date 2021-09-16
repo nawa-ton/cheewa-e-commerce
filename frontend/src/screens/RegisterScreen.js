@@ -46,19 +46,19 @@ const RegisterScreen = (props) => {
                 {error && <MessageBox variant="danger">{errorMsg}</MessageBox>}
                 <div>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" placeholder="Enter account name" required onChange={e => setName(e.target.value)}/>
+                    <input type="text" id="name" required onChange={e => setName(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Enter email" required onChange={e => setEmail(e.target.value)}/>
+                    <input type="email" id="email" required onChange={e => setEmail(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" placeholder="Enter password" required onChange={e => setPassword(e.target.value)}/>
+                    <input type="password" id="password" required onChange={e => setPassword(e.target.value)}/>
                 </div>
                 <div>
                     <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" placeholder="Confirm password" required onChange={e => setConfirmPassword(e.target.value)}/>
+                    <input type="password" id="confirmPassword" required onChange={e => setConfirmPassword(e.target.value)}/>
                 </div>
                 <div>
                     <label/>

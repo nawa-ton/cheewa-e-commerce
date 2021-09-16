@@ -2,6 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from "./router/userRouter.js";
 import productRouter from "./router/productRouter.js";
+import orderRouter from "./router/orderRouter.js";
+
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -23,6 +25,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
+app.use('/api/orders', orderRouter);
 
 //This will redirect all errors from what are wrapped inside expressAsyncHandler to frontend
 app.use((error, req, res, next) => {
