@@ -13,6 +13,7 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderDetailsScreen from "./screens/OrderDetailsScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -51,7 +52,17 @@ function App() {
                   </div>:
                   <Link to="/signin">Sign in</Link>
               }
-
+              {userInfo && userInfo.isAdmin && (
+                  <div className="dropdown">
+                    <Link to="#admin">Admin <i className="fa fa-caret-down"/></Link>
+                    <ul className="dropdown-content">
+                      <li><Link to="/dashboard">Dashboard</Link></li>
+                      <li><Link to="/productlist">Products</Link></li>
+                      <li><Link to="/orderlist">Orders</Link></li>
+                      <li><Link to="/userlist">Users</Link></li>
+                    </ul>
+                  </div>
+              )}
             </div>
           </header>
 
@@ -61,7 +72,7 @@ function App() {
             <Route path="/cart/:id?" component={CartScreen}/> {/* Adding ? to make id optional */}
             <Route path="/signin" component={SigninScreen}/>
             <Route path="/register" component={RegisterScreen}/>
-            <Route path="/profile" component={ProfileScreen}/>
+            <PrivateRoute path="/profile" component={ProfileScreen}/>
             <Route path="/shipping" component={ShippingScreen}/>
             <Route path="/payment" component={PaymentScreen}/>
             <Route path="/placeorder" component={PlaceOrderScreen}/>

@@ -8,7 +8,7 @@ import {
     ORDER_LIST_REQUEST,
     ORDER_LIST_SUCCESS,
     ORDER_PAY_FAIL,
-    ORDER_PAY_REQUEST
+    ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS
 } from "../constants/orderConstants";
 import Axios from "axios";
 import {CART_EMPTY} from "../constants/cartConstants";
@@ -74,7 +74,7 @@ export const payOrder = (order, paymentResult) => async (dispatch, getState) => 
             }
         });
         dispatch({
-            type: ORDER_PAY_FAIL, payload: data
+            type: ORDER_PAY_SUCCESS, payload: data
         });
     }catch (error){
         dispatch({

@@ -42,10 +42,7 @@ const ProductScreen = (props) => {
                                         <Ratings rating={product.rating} numReviews={product.numReviews}/>
                                     </li>
                                     <li>
-                                        Price: ${product.price}
-                                    </li>
-                                    <li>
-                                        Description: ${product.description}
+                                        {product.description}
                                     </li>
                                 </ul>
                             </div>
