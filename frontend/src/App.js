@@ -14,6 +14,7 @@ import OrderDetailsScreen from "./screens/OrderDetailsScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
+import logo from "./cheewa-logo.png";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -32,7 +33,7 @@ function App() {
         <div className="grid-container">
           <header className="row">
             <div>
-              <Link className="logo" to="/">Cheewa</Link>
+              <Link className="logo" to="/"><img src={logo} alt="logo"/></Link>
             </div>
             <div>
               <Link to="/cart">Cart
@@ -81,7 +82,7 @@ function App() {
           </main>
 
           <footer className="row center">
-            All right reserve
+            © Cheewa Natural Food 2021
           </footer>
         </div>
       </BrowserRouter>
