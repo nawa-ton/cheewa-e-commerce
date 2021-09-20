@@ -14,7 +14,7 @@ const OrderHistoryScreen = (props) => {
 
     return (
         <div>
-            <h1>Order History</h1>
+            <h1 className="page-title">Order History</h1>
             {loading ?
                 <LoadingBox/> :
                 error ?
@@ -39,7 +39,7 @@ const OrderHistoryScreen = (props) => {
                                 <td>{order.isPaid ? order.paidOn.substring(0, 10) : 'No'}</td>
                                 <td>{order.isShipped ? order.shippedOn.substring(0, 10) : 'No'}</td>
                                 <td>
-                                    <button type="button" className="small" onClick={() => {
+                                    <button type="button" className="small secondary" onClick={() => {
                                         props.history.push(`/order/${order._id}`);
                                     }}>Details</button>
                                 </td>

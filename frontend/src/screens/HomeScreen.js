@@ -4,6 +4,7 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import {useDispatch, useSelector} from "react-redux";
 import {listProducts} from "../actions/productActions";
+import heroImage from "../hero-image.jpg";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -15,11 +16,11 @@ const HomeScreen = () => {
     }, [dispatch]);
 
     return (
-        <div>
-            <div>
-
+        <div className="home-screen">
+            <div className="hero-container">
+                <img className="cover" src={heroImage}/>
             </div>
-            <h1>Our Products</h1>
+            <h1 className="text-center page-title">Our Products</h1>
             {loading ?
                 <LoadingBox/> :
                 error ?

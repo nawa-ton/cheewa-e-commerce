@@ -49,7 +49,7 @@ const ProfileScreen = () => {
         <div>
             <form className="form" onSubmit={submitHandler}>
                 <div>
-                    <h1>User profile</h1>
+                    <h1 className="page-title">Your Profile</h1>
                 </div>
                 {loading ?
                     <LoadingBox/> :

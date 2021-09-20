@@ -18,7 +18,7 @@ const RegisterScreen = (props) => {
 
     const dispatch = useDispatch();
 
-    const errorMsg = error.includes("E11000 duplicate key error collection") ? "This email address is already registered." : "";
+    const errorMsg = error && error.includes("E11000 duplicate key error collection") ? "This email address is already registered." : "";
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -40,7 +40,7 @@ const RegisterScreen = (props) => {
         <div>
             <form className="form" onSubmit={submitHandler}>
                 <div>
-                    <h1>Create Account</h1>
+                    <h1 className="page-title">Create Account</h1>
                 </div>
                 {loading && <LoadingBox/>}
                 {error && <MessageBox variant="danger">{errorMsg}</MessageBox>}

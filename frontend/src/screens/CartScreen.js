@@ -30,9 +30,9 @@ const CartScreen = (props) => {
     }
 
     return (
-        <div className="row top">
-            <div className="col-2">
-                <h1>Your cart</h1>
+        <div className="row top cart-screen">
+            <h1 className="full-width page-title">Your cart</h1>
+            <div className="col-2 right-margin">
                 {
                     cartItems.length === 0 ?
                         <MessageBox>
@@ -44,8 +44,8 @@ const CartScreen = (props) => {
                                 cartItems.map(item => (
                                     <li key={item.product}>
                                         <div className="row">
-                                            <div>
-                                                <img src={item.image} alt={item.name} className="small"/>
+                                            <div className="cart-thumbnail">
+                                                <Link to={`/product/${item.product}`}><img src={item.image} alt={item.name} className="cover"/></Link>
                                             </div>
                                             <div className="min-30">
                                                 <Link to={`/product/${item.product}`}>{item.name}</Link>
@@ -62,7 +62,7 @@ const CartScreen = (props) => {
                                             </div>
                                             <div>${item.price}</div>
                                             <div>
-                                                <button type="button" onClick={() => removeFromCartHandler(item.product)}>Remove</button>
+                                                <button type="button" className="button-icon" onClick={() => removeFromCartHandler(item.product)}><i className="fa fa-trash fa-lg"/></button>
                                             </div>
                                         </div>
                                     </li>
@@ -71,20 +71,27 @@ const CartScreen = (props) => {
                         </ul>
                 }
             </div>
-            <div className="col-1">
-                <div className="card card-body">
+            <div className="col-1 left-margin">
+                <div className="card">
                     <ul>
                         <li>
-                            <h2>
-                                Subtotal {cartItems.reduce((a, c) => a + c.qty, 0)} items : ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
-                            </h2>
+                            <h1>
+                                {cartItems.reduce((a, c) => a + c.qty, 0)} items <br/>
+                                Subtotal: ${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+                            </h1>
                         </li>
                         <li>
-                            <button type="button" onClick={checkoutHandler} className="primary block" disabled={cartItems.length === 0}>Proceed to Checkout</button>
+                            {
+                                cartItems.length === 0 ?
+                                    <></> :
+                                    <button type="button" onClick={checkoutHandler} className="primary block" disabled={cartItems.length === 0}>Proceed to Checkout</button>
+                            }
                         </li>
                     </ul>
                 </div>
-
+                {
+                    cartItems.length === 0 ? <></> :  <Link to="/"> Continue Shopping</Link>
+                }
             </div>
         </div>
     );

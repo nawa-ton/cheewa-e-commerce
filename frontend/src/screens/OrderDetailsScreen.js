@@ -59,67 +59,62 @@ const OrderDetailsScreen = (props) => {
         error ?
             (<MessageBox variant="danger">{error}</MessageBox>) :
             (
-                <div>
-                    <h1>Order Number: {order._id}</h1>
+                <div className="order-details-screen">
+                    <h1 className="page-title">Order Summary</h1>
+                    <h2>Order Number: {order._id}</h2>
                     <div className="row top">
-                        <div className="col-2">
+                        <div className="col-2 right-margin">
                             <ul>
                                 <li>
-                                    <div className="card card-body">
-                                        <h2>Shipping</h2>
-                                        <p>
-                                            <strong>Name:</strong> {order.shippingAddress.fullName} <br/>
-                                            <strong>Address:</strong> {order.shippingAddress.suiteNumber !== '' ? order.shippingAddress.suiteNumber + " - " : ""}{order.shippingAddress.streetAddress},
-                                            {order.shippingAddress.city}, {order.shippingAddress.province}, {order.shippingAddress.postalCode} <br/>
-                                            <strong>Phone:</strong> {order.shippingAddress.phoneNumber}
-                                        </p>
-                                        {order.isShipped ?
-                                            <MessageBox variant="success">Shipped on {order.shippedOn}</MessageBox> :
-                                            <MessageBox variant="danger">Not yet shipped</MessageBox>
-                                        }
-                                    </div>
+                                    <h2>Shipping</h2>
+                                    <p>
+                                        <strong>Name:</strong> {order.shippingAddress.fullName} <br/>
+                                        <strong>Address:</strong> {order.shippingAddress.suiteNumber !== '' ? order.shippingAddress.suiteNumber + " - " : ""}{order.shippingAddress.streetAddress},
+                                        {order.shippingAddress.city}, {order.shippingAddress.province}, {order.shippingAddress.postalCode} <br/>
+                                        <strong>Phone:</strong> {order.shippingAddress.phoneNumber}
+                                    </p>
+                                    {order.isShipped ?
+                                        <MessageBox variant="success">Status: Shipped on {order.shippedOn}</MessageBox> :
+                                        <MessageBox variant="danger">Status: Not yet shipped</MessageBox>
+                                    }
                                 </li>
                                 <li>
-                                    <div className="card card-body">
-                                        <h2>Payment</h2>
-                                        <p>
-                                            <strong>Payment Method:</strong> {order.paymentMethod}
-                                        </p>
-                                        {order.isPaid ?
-                                            <MessageBox variant="success">Paid on {order.paidOn}</MessageBox> :
-                                            <MessageBox variant="danger">Not yet paid</MessageBox>
-                                        }
-                                    </div>
+                                    <h2>Payment</h2>
+                                    <p>
+                                        <strong>Payment Method:</strong> {order.paymentMethod}
+                                    </p>
+                                    {order.isPaid ?
+                                        <MessageBox variant="success">Status: Paid on {order.paidOn}</MessageBox> :
+                                        <MessageBox variant="danger">Status: Not yet paid</MessageBox>
+                                    }
                                 </li>
                                 <li>
-                                    <div className="card card-body">
-                                        <h2>Order Items</h2>
-                                        <ul>
-                                            {
-                                                order.orderItems.map(item => (
-                                                    <li key={item.product}>
-                                                        <div className="row">
-                                                            <div>
-                                                                <img src={item.image} alt={item.name} className="small"/>
-                                                            </div>
-                                                            <div className="min-30">
-                                                                <Link to={`/product/${item.product}`}>{item.name}</Link>
-                                                            </div>
-                                                            <div>{item.qty} x ${item.price} = ${item.qty * item.price}</div>
+                                    <h2>Order Items</h2>
+                                    <ul className="order-items">
+                                        {
+                                            order.orderItems.map(item => (
+                                                <li key={item.product}>
+                                                    <div className="row">
+                                                        <div className="cart-thumbnail">
+                                                            <Link to={`/product/${item.product}`}><img src={item.image} alt={item.name} className="cover"/></Link>
                                                         </div>
-                                                    </li>
-                                                ))
-                                            }
-                                        </ul>
-                                    </div>
+                                                        <div className="min-30">
+                                                            <Link to={`/product/${item.product}`}>{item.name}</Link>
+                                                        </div>
+                                                        <div>{item.qty} x ${item.price} = ${item.qty * item.price}</div>
+                                                    </div>
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-1">
-                            <div className="card card-body">
+                        <div className="col-1 left-margin">
+                            <div className="card">
                                 <ul>
                                     <li>
-                                        <h2>Order Summary</h2>
+
                                     </li>
                                     <li>
                                         <div className="row">

@@ -36,7 +36,7 @@ function App() {
               <Link className="logo" to="/"><img src={logo} alt="logo"/></Link>
             </div>
             <div>
-              <Link to="/cart">Cart
+              <Link to="/cart"><i className="fa fa-shopping-cart fa-lg"/>
               {cartItems.length > 0 ?
                   <span className="badge">{cartItems.length}</span> :
                   <></>
@@ -44,18 +44,19 @@ function App() {
               </Link>
               {userInfo ?
                   <div className="dropdown">
-                    <Link to="#">{userInfo.name}<i className="fa fa-caret-down"/> </Link>
+                    <Link to="#"><i className="fa fa-user fa-lg"/> </Link>
                     <ul className="dropdown-content">
+                      <li>Hi, {userInfo.name}</li>
                       <li><Link to="/profile">User Profile</Link></li>
                       <li><Link to="/orderhistory">Order History</Link></li>
-                      <li><Link to="#signout" onClick={signouthandler}>Sign Out</Link></li>
+                      <li><Link to="/signin" onClick={signouthandler}>Sign Out</Link></li>
                     </ul>
                   </div>:
                   <Link to="/signin">Sign in</Link>
               }
               {userInfo && userInfo.isAdmin && (
                   <div className="dropdown">
-                    <Link to="#admin">Admin <i className="fa fa-caret-down"/></Link>
+                    <Link to="#admin"><i className="fa fa-cog fa-lg"/></Link>
                     <ul className="dropdown-content">
                       <li><Link to="/dashboard">Dashboard</Link></li>
                       <li><Link to="/productlist">Products</Link></li>
@@ -75,7 +76,7 @@ function App() {
             <Route path="/register" component={RegisterScreen}/>
             <PrivateRoute path="/profile" component={ProfileScreen}/>
             <Route path="/shipping" component={ShippingScreen}/>
-            <Route path="/payment" component={PaymentScreen}/>
+           {/* <Route path="/payment" component={PaymentScreen}/>*/}
             <Route path="/placeorder" component={PlaceOrderScreen}/>
             <Route path="/order/:id" component={OrderDetailsScreen}/>
             <Route path="/orderhistory" component={OrderHistoryScreen}/>

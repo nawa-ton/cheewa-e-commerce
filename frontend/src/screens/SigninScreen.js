@@ -32,7 +32,7 @@ const SigninScreen = (props) => {
         <div>
             <form className="form" onSubmit={submitHandler}>
                 <div>
-                    <h1>Sign In</h1>
+                    <h1 className="page-title">Sign In</h1>
                 </div>
                 {loading && <LoadingBox/>}
                 {error && <MessageBox variant="danger">{error}</MessageBox>}

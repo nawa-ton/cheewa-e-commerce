@@ -5,17 +5,16 @@ import {Link} from "react-router-dom";
 const Product = (props) => {
     const {product} = props;
     return (
-        <div key={product._id} className="card">
+        <div key={product._id} className="card col-4">
             <Link to={`/product/${product._id}`}>
-                <img alt={product.name} className="medium" src={product.image}/>
+                <img alt={product.name} className="full-width" src={product.image}/>
+                <div className="card-body">
+                    <div className="product-caption">{product.name}<br/>
+                       ${product.price}
+                    </div>
+                    {/*<Ratings rating={product.rating} numReviews={product.numReviews}/>*/}
+                </div>
             </Link>
-            <div className="card-body">
-                <Link to={`/product/${product._id}`}>
-                    <h2>{product.name}</h2>
-                </Link>
-               {/*<Ratings rating={product.rating} numReviews={product.numReviews}/>*/}
-                <div className="price">${product.price}</div>
-            </div>
         </div>
     );
 };

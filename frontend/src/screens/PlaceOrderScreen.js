@@ -36,60 +36,52 @@ const PlaceOrderScreen = (props) => {
     }, [dispatch, order, props.history, success])
 
     return (
-        <div>
-            <CheckoutSteps step1 step2 step3 step4/>
+        <div className="place-order-screen">
+            {/*<CheckoutSteps step1 step2 step3/>*/}
             <div className="row top">
-                <div className="col-2">
+                <h1 className="page-title full-width">Order Summary</h1>
+                <div className="col-2 right-margin">
                     <ul>
                         <li>
-                            <div className="card card-body">
-                                <h2>Shipping</h2>
-                                <p>
-                                    <strong>Name:</strong> {cart.shippingAddress.fullName} <br/>
-                                    <strong>Address:</strong> {cart.shippingAddress.suiteNumber !== '' ? cart.shippingAddress.suiteNumber + "-" : ""} {cart.shippingAddress.streetAddress},
-                                    {cart.shippingAddress.city}, {cart.shippingAddress.province}, {cart.shippingAddress.postalCode} <br/>
-                                    <strong>Phone:</strong> {cart.shippingAddress.phoneNumber}
-                                </p>
-                            </div>
+                            <h2>Shipping</h2>
+                            <p>
+                                <strong>Name:</strong> {cart.shippingAddress.fullName} <br/>
+                                <strong>Address:</strong> {cart.shippingAddress.suiteNumber !== '' ? cart.shippingAddress.suiteNumber + "-" : ""} {cart.shippingAddress.streetAddress},
+                                {cart.shippingAddress.city}, {cart.shippingAddress.province}, {cart.shippingAddress.postalCode} <br/>
+                                <strong>Phone:</strong> {cart.shippingAddress.phoneNumber}
+                            </p>
                         </li>
                         <li>
-                            <div className="card card-body">
-                                <h2>Payment</h2>
-                                <p>
-                                    <strong>Payment Method:</strong> {cart.paymentMethod}
-                                </p>
-                            </div>
+                            <h2>Payment</h2>
+                            <p>
+                                <strong>Payment Method:</strong> {cart.paymentMethod}
+                            </p>
                         </li>
                         <li>
-                            <div className="card card-body">
-                                <h2>Order Items</h2>
-                                <ul>
-                                    {
-                                        cart.cartItems.map(item => (
-                                            <li key={item.product}>
-                                                <div className="row">
-                                                    <div>
-                                                        <img src={item.image} alt={item.name} className="small"/>
-                                                    </div>
-                                                    <div className="min-30">
-                                                        <Link to={`/product/${item.product}`}>{item.name}</Link>
-                                                    </div>
-                                                    <div>{item.qty} x ${item.price} = ${item.qty * item.price}</div>
+                            <h2>Order Items</h2>
+                            <ul className="order-items">
+                                {
+                                    cart.cartItems.map(item => (
+                                        <li key={item.product}>
+                                            <div className="row">
+                                                <div className="cart-thumbnail">
+                                                    <Link to={`/product/${item.product}`}><img src={item.image} alt={item.name} className="cover"/></Link>
                                                 </div>
-                                            </li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
+                                                <div className="min-30">
+                                                    <Link to={`/product/${item.product}`}>{item.name}</Link>
+                                                </div>
+                                                <div>{item.qty} x ${item.price} = ${item.qty * item.price}</div>
+                                            </div>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
                         </li>
                     </ul>
                 </div>
-                <div className="col-1">
-                    <div className="card card-body">
+                <div className="col-1 left-margin">
+                    <div className="card">
                         <ul>
-                            <li>
-                                <h2>Order Summary</h2>
-                            </li>
                             <li>
                                 <div className="row">
                                     <div>{cart.cartItems.reduce((a,c) => a + c.qty, 0)} Items</div>

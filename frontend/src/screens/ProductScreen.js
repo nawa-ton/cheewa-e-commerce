@@ -22,18 +22,18 @@ const ProductScreen = (props) => {
     }
 
     return (
-        <div>
+        <div className="product-screen">
             {loading ?
                 <LoadingBox/> :
                 error ?
                     <MessageBox variant="danger">{error}</MessageBox> :
                     <div>
-                        <Link to="/">Back to result</Link>
+                        <Link to="/" className="back">Back to result</Link>
                         <div className="row top">
-                            <div className="col-2">
-                                <img className="large" src={product.image} alt={product.name}/>
+                            <div className="col-1 right-margin">
+                                <img className="cover" src={product.image} alt={product.name}/>
                             </div>
-                            <div className="col-1">
+                            <div className="col-1 right-margin">
                                 <ul>
                                     <li>
                                         <h1>{product.name}</h1>
@@ -47,7 +47,7 @@ const ProductScreen = (props) => {
                                 </ul>
                             </div>
                             <div className="col-1">
-                                <div className="card card-body">
+                                <div className="card">
                                     <ul>
                                         <li>
                                             <div className="row">
@@ -84,9 +84,14 @@ const ProductScreen = (props) => {
                                                 </li> :
                                                 <></>
                                         }
-                                        <li>
-                                            <button onClick={addToCartHandler} className="primary block">Add to Cart</button>
-                                        </li>
+                                        {
+                                            product.countInStock > 0 ?
+                                                <li>
+                                                    <button onClick={addToCartHandler} className="primary block">Add to Cart</button>
+                                                </li> :
+                                                <></>
+                                        }
+
                                     </ul>
                                 </div>
                             </div>

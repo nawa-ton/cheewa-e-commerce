@@ -22,10 +22,10 @@ const PaymentScreen = (props) => {
 
     return (
         <div>
-            <CheckoutSteps step1 step2 step3/>
+            <CheckoutSteps step1 step2/>
             <form className="form" onSubmit={submitHandler}>
                 <div>
-                    <h1>Payment Method</h1>
+                    <h1 className="page-title">Payment Method</h1>
                 </div>
                 <div>
                     <div className="radio">
