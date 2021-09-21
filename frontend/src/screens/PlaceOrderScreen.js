@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import CheckoutSteps from "../components/checkoutSteps";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import {createOrder} from "../actions/orderActions";

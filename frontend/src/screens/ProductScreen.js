@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import Ratings from "../components/Ratings";
-import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
@@ -28,7 +27,6 @@ const ProductScreen = (props) => {
                 error ?
                     <MessageBox variant="danger">{error}</MessageBox> :
                     <div>
-                        <Link to="/" className="back">Back to result</Link>
                         <div className="row top">
                             <div className="col-1 right-margin">
                                 <img className="cover" src={product.image} alt={product.name}/>

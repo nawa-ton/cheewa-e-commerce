@@ -18,7 +18,7 @@ const data = {
     products:[
         {
             name: 'Apple Jam',
-            category: 'Condiment',
+            category: 'Jam',
             image: '/images/p1.jpg',
             weight: '250g',
             price: 12,
@@ -29,7 +29,7 @@ const data = {
         },
         {
             name: 'Red Current Jam',
-            category: 'Condiment',
+            category: 'Jam',
             image: '/images/p2.jpg',
             weight: '250g',
             price: 16,
@@ -40,7 +40,7 @@ const data = {
         },
         {
             name: 'Raspberry & Strawberry Jam',
-            category: 'Condiment',
+            category: 'Jam',
             image: '/images/p3.jpg',
             weight: '360g (120g X 3)',
             price: 20,
@@ -51,7 +51,7 @@ const data = {
         },
         {
             name: 'Prune Jam',
-            category: 'Condiment',
+            category: 'Jam',
             image: '/images/p4.jpg',
             weight: '250g (50g X 5)',
             price: 13,
@@ -62,7 +62,7 @@ const data = {
         },
         {
             name: 'Raspberry Jam',
-            category: 'Condiment',
+            category: 'Jam',
             image: '/images/p5.jpg',
             weight: '300g (150g X 2)',
             price: 16,
@@ -73,7 +73,7 @@ const data = {
         },
         {
             name: 'Strawberry Jam',
-            category: 'Condiment',
+            category: 'Jam',
             image: '/images/p6.jpg',
             weight: '300g',
             price: 13,
@@ -81,6 +81,28 @@ const data = {
             rating: 4.5,
             numReviews: 13,
             description: 'Organic strawberry jam from local farm. Perfect for toast, yogurt, pancake'
+        },
+        {
+            name: 'Extra Virgin Olive Oil',
+            category: 'Oil',
+            image: '/images/p7.jpg',
+            weight: '500ml',
+            price: 20,
+            countInStock: 18,
+            rating: 4.4,
+            numReviews: 24,
+            description: 'Organic extra virgin olive oil from local farm. Perfect for salad dressing'
+        },
+        {
+            name: 'Wild Flower Honey',
+            category: 'Honey',
+            image: '/images/p8.jpg',
+            weight: '350g',
+            price: 18,
+            countInStock: 5,
+            rating: 4.8,
+            numReviews: 25,
+            description: 'Organic wild flower honey from local farm. Perfect for everything'
         }
     ]
 }

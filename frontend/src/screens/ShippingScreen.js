@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import CheckoutSteps from "../components/checkoutSteps";
 import {useDispatch, useSelector} from "react-redux";
 import {savePaymentMethod, saveShippingAddress} from "../actions/cartActions.js";
 

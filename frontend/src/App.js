@@ -8,13 +8,13 @@ import SigninScreen from "./screens/SigninScreen";
 import {signout} from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingScreen from "./screens/ShippingScreen";
-import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderDetailsScreen from "./screens/OrderDetailsScreen";
 import OrderHistoryScreen from "./screens/OrderHistoryScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
 import logo from "./cheewa-logo.png";
+import ProductsListScreen from "./screens/ProductsListScreen";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -36,6 +36,7 @@ function App() {
               <Link className="logo" to="/"><img src={logo} alt="logo"/></Link>
             </div>
             <div>
+              <Link className="products-link" to="/products">Products</Link>
               <Link to="/cart"><i className="fa fa-shopping-cart fa-lg"/>
               {cartItems.length > 0 ?
                   <span className="badge">{cartItems.length}</span> :
@@ -70,6 +71,7 @@ function App() {
 
           <main>
             <Route path="/" component={HomeScreen} exact/>
+            <Route path="/products" component={ProductsListScreen}/>
             <Route path="/product/:id" component={ProductScreen}/>
             <Route path="/cart/:id?" component={CartScreen}/> {/* Adding ? to make id optional */}
             <Route path="/signin" component={SigninScreen}/>
