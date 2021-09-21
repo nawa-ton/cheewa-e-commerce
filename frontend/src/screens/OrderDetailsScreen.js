@@ -63,7 +63,7 @@ const OrderDetailsScreen = (props) => {
                     <h1 className="page-title">Order Summary</h1>
                     <h2>Order Number: {order._id}</h2>
                     <div className="row top">
-                        <div className="col-2 right-margin">
+                        <div className="col-2 col-right-margin">
                             <ul>
                                 <li>
                                     <h2>Shipping</h2>
@@ -110,7 +110,7 @@ const OrderDetailsScreen = (props) => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="col-1 left-margin">
+                        <div className="col-1 col-left-margin">
                             <div className="card">
                                 <ul>
                                     <li>

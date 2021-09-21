@@ -39,7 +39,7 @@ const PlaceOrderScreen = (props) => {
             {/*<CheckoutSteps step1 step2 step3/>*/}
             <div className="row top">
                 <h1 className="page-title full-width">Order Summary</h1>
-                <div className="col-2 right-margin">
+                <div className="col-2 col-right-margin">
                     <ul>
                         <li>
                             <h2>Shipping</h2>
@@ -78,7 +78,7 @@ const PlaceOrderScreen = (props) => {
                         </li>
                     </ul>
                 </div>
-                <div className="col-1 left-margin">
+                <div className="col-1 col-left-margin">
                     <div className="card">
                         <ul>
                             <li>

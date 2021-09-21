@@ -15,7 +15,7 @@ const ProductsListScreen = () => {
     }, [dispatch]);
 
     return (
-        <div className="home-screen">
+        <div className="products-list-screen">
             <h1 className="text-center page-title">Our Products</h1>
             {loading ?
                 <LoadingBox/> :

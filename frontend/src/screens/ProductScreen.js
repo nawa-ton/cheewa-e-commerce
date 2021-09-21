@@ -28,10 +28,10 @@ const ProductScreen = (props) => {
                     <MessageBox variant="danger">{error}</MessageBox> :
                     <div>
                         <div className="row top">
-                            <div className="col-1 right-margin">
+                            <div className="col-1 col-right-margin">
                                 <img className="cover" src={product.image} alt={product.name}/>
                             </div>
-                            <div className="col-1 right-margin">
+                            <div className="col-1 col-right-margin">
                                 <ul>
                                     <li>
                                         <h1>{product.name}</h1>

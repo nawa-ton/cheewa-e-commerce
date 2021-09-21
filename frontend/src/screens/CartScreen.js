@@ -32,7 +32,7 @@ const CartScreen = (props) => {
     return (
         <div className="row top cart-screen">
             <h1 className="full-width page-title">Your cart</h1>
-            <div className="col-2 right-margin">
+            <div className="col-2 col-right-margin">
                 {
                     cartItems.length === 0 ?
                         <MessageBox>
@@ -47,22 +47,24 @@ const CartScreen = (props) => {
                                             <div className="cart-thumbnail">
                                                 <Link to={`/product/${item.product}`}><img src={item.image} alt={item.name} className="cover"/></Link>
                                             </div>
-                                            <div className="min-30">
+                                            <div className="min-300px">
                                                 <Link to={`/product/${item.product}`}>{item.name}</Link>
                                             </div>
-                                            <div>
-                                                <select value={item.qty} onChange={e => dispatch(addToCart(item.product, Number(e.target.value)))}>
-                                                    {
-                                                        [...Array(item.countInStock).keys()].map(x => (
-                                                            <option key={x + 1}
-                                                                    value={x + 1}>{x + 1}</option>
-                                                        ))
-                                                    }
-                                                </select>
-                                            </div>
-                                            <div>${item.price}</div>
-                                            <div>
-                                                <button type="button" className="button-icon" onClick={() => removeFromCartHandler(item.product)}><i className="fa fa-trash fa-lg"/></button>
+                                            <div className="min-150px">
+                                                <div>
+                                                    <select value={item.qty} onChange={e => dispatch(addToCart(item.product, Number(e.target.value)))}>
+                                                        {
+                                                            [...Array(item.countInStock).keys()].map(x => (
+                                                                <option key={x + 1}
+                                                                        value={x + 1}>{x + 1}</option>
+                                                            ))
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div>${item.price}</div>
+                                                <div>
+                                                    <button type="button" className="button-icon" onClick={() => removeFromCartHandler(item.product)}><i className="fa fa-trash fa-lg"/></button>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -71,7 +73,7 @@ const CartScreen = (props) => {
                         </ul>
                 }
             </div>
-            <div className="col-1 left-margin">
+            <div className="col-1 col-left-margin">
                 <div className="card">
                     <ul>
                         <li>

@@ -18,7 +18,7 @@ const HomeScreen = (props) => {
         <div className="home-screen">
             <div className="hero-container">
                 <div className="layer">
-                    <p>Natural and healthy food that does not compromise on flavour</p>
+                    <p>Natural and healthy food that does not compromise on&nbsp;flavour</p>
                     <button className="primary" onClick={() => {
                         props.history.push(`/products`);
                     }}>Our Products</button>
