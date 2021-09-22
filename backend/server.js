@@ -5,6 +5,8 @@ import productRouter from "./router/productRouter.js";
 import orderRouter from "./router/orderRouter.js";
 import dotenv from 'dotenv';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
 dotenv.config();
 
 const app = express();
@@ -23,6 +25,7 @@ mongoose.connection.once('open', () => {
     console.log("Successfully connected to MongoDB database");
 });
 
+const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 if(process.env.NODE_ENV === "production"){
     app.use(express.static('../frontend/build'));
