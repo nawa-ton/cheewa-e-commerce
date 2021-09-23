@@ -31,7 +31,7 @@ const HomeScreen = (props) => {
                     <MessageBox variant="danger">{error}</MessageBox> :
                     <div className="row">
                         {
-                            products.map(product =>
+                            products && products.map(product =>
                                 (product.numReviews >= 20 && product.rating > 4 ?
                                         <Product key={product._id} product={product}/> :
                                         <div key={product._id}/>
