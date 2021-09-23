@@ -36,7 +36,7 @@ const HomeScreen = (props) => {
                                 (product.numReviews >= 20 && product.rating > 4 ?
                                         <Product key={product._id} product={product}/> :
                                         <div key={product._id}/>
-                            ))
+                                ))
                         }
                     </div>
             }
