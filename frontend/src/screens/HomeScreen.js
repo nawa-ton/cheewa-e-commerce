@@ -14,6 +14,7 @@ const HomeScreen = (props) => {
         dispatch(listProducts());
     }, [dispatch]);
 
+    console.log("HomeScreen products: ", products);
     return (
         <div className="home-screen">
             <div className="hero-container">
@@ -25,13 +26,13 @@ const HomeScreen = (props) => {
                 </div>
             </div>
             <h1 className="text-center page-title">Best Seller</h1>
-            {loading || !products?
+            {loading || products == undefined?
                 <LoadingBox/> :
                 error ?
                     <MessageBox variant="danger">{error}</MessageBox> :
                     <div className="row">
                         {
-                            products && products.map(product =>
+                            products.map(product =>
                                 (product.numReviews >= 20 && product.rating > 4 ?
                                         <Product key={product._id} product={product}/> :
                                         <div key={product._id}/>

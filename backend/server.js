@@ -32,9 +32,9 @@ if(process.env.NODE_ENV === "production"){
     );
 }
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
     res.send('Server is ready');
-});
+});*/
 
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
