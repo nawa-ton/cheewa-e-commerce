@@ -92,7 +92,7 @@ const CartScreen = (props) => {
                     </ul>
                 </div>
                 {
-                    cartItems.length === 0 ? <></> :  <Link to="/"> Continue Shopping</Link>
+                    cartItems.length === 0 ? <></> :  <Link to="/products"> Continue Shopping</Link>
                 }
             </div>
         </div>

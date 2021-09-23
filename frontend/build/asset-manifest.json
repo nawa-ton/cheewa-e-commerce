@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.293306f5.chunk.css",
+    "main.js": "/static/js/main.cb50711c.chunk.js",
+    "main.js.map": "/static/js/main.cb50711c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bc45a39f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bc45a39f.js.map",
+    "static/js/2.90a456b3.chunk.js": "/static/js/2.90a456b3.chunk.js",
+    "static/js/2.90a456b3.chunk.js.map": "/static/js/2.90a456b3.chunk.js.map",
+    "static/js/3.a5bebe6a.chunk.js": "/static/js/3.a5bebe6a.chunk.js",
+    "static/js/3.a5bebe6a.chunk.js.map": "/static/js/3.a5bebe6a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.293306f5.chunk.css.map": "/static/css/main.293306f5.chunk.css.map",
+    "static/js/2.90a456b3.chunk.js.LICENSE.txt": "/static/js/2.90a456b3.chunk.js.LICENSE.txt",
+    "static/media/cheewa-logo.18b2792b.png": "/static/media/cheewa-logo.18b2792b.png",
+    "static/media/index.css": "/static/media/hero-img.2cb3e779.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bc45a39f.js",
+    "static/js/2.90a456b3.chunk.js",
+    "static/css/main.293306f5.chunk.css",
+    "static/js/main.cb50711c.chunk.js"
+  ]
+}
