@@ -26,7 +26,7 @@ const HomeScreen = (props) => {
                 </div>
             </div>
             <h1 className="text-center page-title">Best Seller</h1>
-            {loading || products == undefined?
+            {loading ?
                 <LoadingBox/> :
                 error ?
                     <MessageBox variant="danger">{error}</MessageBox> :
