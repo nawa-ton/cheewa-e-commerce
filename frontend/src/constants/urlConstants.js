@@ -1,2 +1,2 @@
-export const herokuBackend = "https://cheewa-ecommerce.herokuapp.com";
-export const localBackend = "";
+export const backendUrl = "https://cheewa-ecommerce.herokuapp.com";
+//export const backendUrl = "";

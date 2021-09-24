@@ -9,12 +9,12 @@ import {
     USER_SIGNOUT, USER_UPDATE_FAIL, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS
 } from "../constants/userConstants";
 import Axios from "axios";
-import {herokuBackend} from "../constants/urlConstants";
+import {backendUrl} from "../constants/urlConstants";
 
 export const register = (name, email, password) => async (dispatch) => {
     dispatch({type: USER_REGISTER_REQUEST, payload:{email, password}});
     try{
-        const {data} = await Axios.post(herokuBackend + '/api/users/register', {name, email, password});
+        const {data} = await Axios.post(backendUrl + '/api/users/register', {name, email, password});
         dispatch({
             type: USER_REGISTER_SUCCESS,
             payload: data
@@ -35,7 +35,7 @@ export const register = (name, email, password) => async (dispatch) => {
 export const signin = (email, password) => async (dispatch) => {
     dispatch({type: USER_SIGNIN_REQUEST, payload:{email, password}});
     try{
-        const {data} = await Axios.post(herokuBackend + '/api/users/signin', {email, password});
+        const {data} = await Axios.post(backendUrl + '/api/users/signin', {email, password});
         dispatch({
             type: USER_SIGNIN_SUCCESS,
             payload: data
@@ -62,7 +62,7 @@ export const detailsUser = (userId) => async (dispatch, getState) => {
     dispatch({type: USER_DETAILS_REQUEST, payload: userId});
     const {userSignin: {userInfo}} = getState();
     try{
-        const {data} = await Axios.get(herokuBackend +`/api/users/profile/${userId}`, {
+        const {data} = await Axios.get(backendUrl +`/api/users/profile/${userId}`, {
             headers: {
                 Authorization: `Bearer ${userInfo.token}`
             }
@@ -82,7 +82,7 @@ export const updateUser = (user) => async (dispatch, getState) => {
     dispatch({type: USER_UPDATE_REQUEST, payload: user});
     const {userSignin: {userInfo}} = getState();
     try{
-        const { data } = await Axios.put(herokuBackend + '/api/users/profile', user, {
+        const { data } = await Axios.put(backendUrl + '/api/users/profile', user, {
             headers: {
                 Authorization: `Bearer ${userInfo.token}`
             }

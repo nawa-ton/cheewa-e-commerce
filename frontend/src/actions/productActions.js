@@ -6,7 +6,7 @@ import {
     PRODUCT_LIST_SUCCESS
 } from "../constants/productConstants";
 import Axios from "axios";
-import {herokuBackend} from "../constants/urlConstants";
+import {backendUrl} from "../constants/urlConstants";
 
 export const listProducts = () => async (dispatch) => {
     dispatch({
@@ -14,7 +14,7 @@ export const listProducts = () => async (dispatch) => {
     });
 
     try{
-        const { data } = await Axios.get(herokuBackend + '/api/products', {
+        const { data } = await Axios.get(backendUrl + '/api/products', {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -28,7 +28,7 @@ export const listProducts = () => async (dispatch) => {
 export const detailsProduct = (productId) => async (dispatch) => {
     dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
     try {
-        const { data } = await Axios.get(herokuBackend + `/api/products/${productId}`);
+        const { data } = await Axios.get(backendUrl + `/api/products/${productId}`);
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
     } catch (error) {
         dispatch({
