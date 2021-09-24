@@ -1,5 +1,5 @@
 import express from "express";
-import data from "../data/initial.js";
+import data from "../initial.js";
 import User from "../models/userModel.js";
 import expressAsyncHandler from "express-async-handler";
 import bcrypt from 'bcryptjs';

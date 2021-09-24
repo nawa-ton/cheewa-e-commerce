@@ -6,6 +6,7 @@ import {
     PRODUCT_LIST_SUCCESS
 } from "../constants/productConstants";
 import Axios from "axios";
+import {backendUrl} from "../constants/urlConstants";
 
 export const listProducts = () => async (dispatch) => {
     dispatch({
@@ -13,7 +14,11 @@ export const listProducts = () => async (dispatch) => {
     });
 
     try{
-        const { data } = await Axios.get('/api/products');
+        const { data } = await Axios.get(backendUrl + '/api/products', {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
         dispatch({type: PRODUCT_LIST_SUCCESS, payload: data});
     }catch (error){
         dispatch({type: PRODUCT_LIST_FAIL, payload: error.message});
@@ -23,7 +28,7 @@ export const listProducts = () => async (dispatch) => {
 export const detailsProduct = (productId) => async (dispatch) => {
     dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: productId });
     try {
-        const { data } = await Axios.get(`/api/products/${productId}`);
+        const { data } = await Axios.get(backendUrl + `/api/products/${productId}`);
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
     } catch (error) {
         dispatch({
